@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Performance Chart</title>
+        <script type="text/javascript" src="http://dygraphs.com/dygraph-combined.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+    </head>
+    <body>
+        <div id="chart_div" style="width: 1000px; height: 600px;"></div>
+        <input type="button" value="Unzoom" onclick="unzoomGraph()" />
+        <script type="text/javascript">
+            g = new Dygraph(
+                document.getElementById("chart_div"),
+                data_chart(),
+                {
+                }
+            );
+            function unzoomGraph() {
+                g.updateOptions({
+                dateWindow: null,
+                valueRange: null
+                });
+            }
+        </script>
+    </body>
+</html>
